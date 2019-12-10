@@ -66,3 +66,23 @@ public class LoginAuthHandler implements AuthHandler {
     }
 }
 ```
+
+### 获取登录信息及添加权限验证注解
+- 注入登录信息注解：@LoginRequest
+- 权限验证注解：@LoginAuth
+```java
+@RestController
+public class DemoController {
+
+    @RequestMapping(method = RequestMethod.GET, path = "/login")
+    public String login() {
+        return "success";
+    }
+
+    @LoginAuth
+    @RequestMapping(method = RequestMethod.GET, path = "/user/get")
+    public String getUser(@LoginRequest LoginUser loginUser) {
+        return loginUser.toString();
+    }
+}
+```
