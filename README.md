@@ -1,4 +1,5 @@
-# login-authority
+# login-authority [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 登录验证、登录用户信息自动注入  
 支持自定义登录信息类
 
