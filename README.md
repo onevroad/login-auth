@@ -9,7 +9,7 @@ It supports you to define the login information by yourself.
 <dependency>
     <groupId>org.onevroad</groupId>
     <artifactId>login-authority-core</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
 </dependency>
 ```
 
