@@ -1,10 +1,10 @@
 # login-authority [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-登录验证、登录用户信息自动注入  
-支持自定义登录信息类
+This component will help you to verify login and automatically inject the login information that your defined.
+It supports you to define the login information by yourself.
 
 ## Quick Start
-### 引入依赖
+### add maven dependency
 ```maven
 <dependency>
     <groupId>org.onevroad</groupId>
@@ -13,7 +13,7 @@
 </dependency>
 ```
 
-### 自定义登录信息类
+### define the login information
 ```java
 public class LoginUser {
 
@@ -29,7 +29,7 @@ public class LoginUser {
 }
 ```
 
-### 实现请求信息转换接口
+### implement the interface of message converter
 ```java
 @Component
 public class LoginRequestMessageConverter implements RequestMessageConverter {
@@ -45,7 +45,7 @@ public class LoginRequestMessageConverter implements RequestMessageConverter {
 }
 ```
 
-### 实现权限验证处理器接口
+### implement the interface of auth handler
 ```java
 @Slf4j
 @Component
@@ -68,9 +68,9 @@ public class LoginAuthHandler implements AuthHandler {
 }
 ```
 
-### 获取登录信息及添加权限验证注解
-- 注入登录信息注解：@LoginRequest
-- 权限验证注解：@LoginAuth
+### add annotation for verifying login and injecting the login infomation
+- the annotation of inject the login infomation: @LoginRequest
+- the annotation of verify login: @LoginAuth
 ```java
 @RestController
 public class DemoController {
