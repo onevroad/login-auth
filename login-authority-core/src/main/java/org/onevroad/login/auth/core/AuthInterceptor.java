@@ -3,6 +3,7 @@ package org.onevroad.login.auth.core;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 
 @Slf4j
+@Component
 public class AuthInterceptor implements HandlerInterceptor {
 
     @Autowired(required = false)

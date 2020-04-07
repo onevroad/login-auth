@@ -1,8 +1,10 @@
 package org.onevroad.login.auth.core;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -10,12 +12,16 @@ import java.util.List;
 
 @Slf4j
 @Configuration
+@ComponentScan
 public class LoginWebMvcConfigurer implements WebMvcConfigurer {
 
     private RequestMessageConverter converter;
 
-    public LoginWebMvcConfigurer(RequestMessageConverter converter) {
+    private AuthInterceptor interceptor;
+
+    public LoginWebMvcConfigurer(RequestMessageConverter converter, AuthInterceptor interceptor) {
         this.converter = converter;
+        this.interceptor = interceptor;
     }
 
     @Override
@@ -29,7 +35,7 @@ public class LoginWebMvcConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new AuthInterceptor());
+        registry.addInterceptor(interceptor);
     }
 
 
