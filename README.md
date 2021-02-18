@@ -1,4 +1,4 @@
-# login-authority [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+# login-auth [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This component will help you to verify login and automatically inject the login information that your defined.
 It supports you to define the login information by yourself.
