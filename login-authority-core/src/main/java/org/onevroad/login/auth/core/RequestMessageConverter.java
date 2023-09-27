@@ -1,8 +1,8 @@
 package org.onevroad.login.auth.core;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.MethodParameter;
 
-import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Type;
 
 public interface RequestMessageConverter {
